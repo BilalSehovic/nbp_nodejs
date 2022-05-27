@@ -5,6 +5,7 @@ const badges = require('../controllers/badges.js');
 const comments = require('../controllers/comments.js');
 const linktypes = require('../controllers/linktypes.js');
 const postlinks = require('../controllers/postlinks.js');
+const posts = require('../controllers/posts.js');
 
 router.route('/users/:id?')
     .get(users.get);
@@ -20,5 +21,8 @@ router.route('/linktypes/:id?')
 
 router.route('/postlinks/:id?')
     .get(postlinks.get);
+
+router.route('/posts/:id?')
+    .get(posts.get);
 
 module.exports = router;
