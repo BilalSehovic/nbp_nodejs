@@ -2,7 +2,6 @@ const database = require('../nbp.js');
 
 const baseQuery =
     `select Id "Id",
-    DisplayName "DisplayName",
     PostId "PostId",
     RelatedPostId "RelatedPostId",
     LinkTypeId "LinkType"
