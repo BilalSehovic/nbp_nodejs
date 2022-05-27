@@ -6,6 +6,7 @@ const comments = require('../controllers/comments.js');
 const linktypes = require('../controllers/linktypes.js');
 const postlinks = require('../controllers/postlinks.js');
 const posts = require('../controllers/posts.js');
+const posttypes = require('../controllers/posttypes.js');
 
 router.route('/users/:id?')
     .get(users.get);
@@ -25,4 +26,7 @@ router.route('/postlinks/:id?')
 router.route('/posts/:id?')
     .get(posts.get);
 
-module.exports = router;
+router.route('/posttypes/:id?')
+    .get(posttypes.get);
+
+module.exports = router; 
