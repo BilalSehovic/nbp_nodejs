@@ -21,7 +21,7 @@ const baseQuery =
     Tags "Tags",
     Title "Title",
     ViewCount "ViewCount"
-  from Users`;
+  from Posts`;
 
 async function find(context) {
     let query = baseQuery;
