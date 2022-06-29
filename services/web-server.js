@@ -18,7 +18,7 @@ function initialize() {
         return;
       }
 
-      console.log('Web server listening on localhost:${webServerConfig.port}');
+      console.log(`Web server listening on localhost:${webServerConfig.port}`);
 
       resolve();
     });

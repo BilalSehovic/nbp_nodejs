@@ -4,6 +4,7 @@ const dbConfig = require('./config/database.js');
 
 async function initialize() {
   await oracledb.createPool(dbConfig.hrPool);
+  oracledb.autoCommit = true;
 }
 
 module.exports.initialize = initialize;
@@ -35,12 +36,13 @@ async function run() {
   let connection;
 
   try {
-	connection = await oracledb.getConnection({ user: "nbp", password: "etfnbp", connectionString: "ora-02.db.lab.etf.unsa.ba/cdb1" });
-	
-  console.log("Successfully connected to Oracle Database");
+    oracledb.autoCommit = true;
+    connection = await oracledb.getConnection({ user: "nbp", password: "etfnbp", connectionString: "ora-02.db.lab.etf.unsa.ba/cdb1" });
+    
+    console.log("Successfully connected to Oracle Database");
 
-  const result = await connection.execute(`SELECT table_name FROM all_tables WHERE owner = 'NBP'`);
-  console.log(result.rows);
+    const result = await connection.execute(`SELECT table_name FROM all_tables WHERE owner = 'NBP'`);
+    console.log(result.rows);
 	
 
   } catch (err) {

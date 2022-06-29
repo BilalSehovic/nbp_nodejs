@@ -19,6 +19,15 @@ router.route('/badges/:id?')
 router.route('/comments/:id?')
     .get(comments.get);
 
+router.route('/comments')
+    .post(comments.post);
+
+router.route('/comments/:id?')
+    .put(comments.put);
+
+router.route('/comments/:id?')
+    .delete(comments.del);
+
 router.route('/linktypes/:id?')
     .get(linktypes.get);
 
